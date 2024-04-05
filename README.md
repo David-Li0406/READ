@@ -61,12 +61,14 @@ wandb agent <sweep-ID>
 
 - Or you can directly use the hyper-parameters below:
 For ERICA:
+
 |              |     | SemEval |      |     | ReTACRED |      |     | Wiki80 |      |
 |--------------|-----|---------|------|-----|----------|------|-----|--------|------|
 |              | 1%  | 10%     | 100% | 1%  | 10%      | 100% | 1%  | 10%    | 100% |
 | adv_lr       | 0.1 | 0.05    |  0.1 | 0.1 |   0.05   |  0.1 | 0.1 |   0.1  | 0.02 |
 | adv_max_norm | 0.6 |   0.2   |  0.6 | 0.6 |    0.6   |  0.4 | 0.6 |   0.4  | 0.4  |
 | adv_steps    |  3  |    3    |   3  |  3  |     3    |   3  |  2  |    3   | 3    |
+
 For FineCL (TBA)
 - Revise the adversarial hyper-parameters in `configs/trainer/sentence_re.yaml` to the corresponding values and run:
 ```
