@@ -1,0 +1,19 @@
+# @package _global_
+
+# to execute this experiment run:
+# python run.py experiment=stage_2.yaml
+
+defaults:
+  - override /mode: exp.yaml
+  - override /trainer: contrastive_learning.yaml
+
+debug_mode: True
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+# name of the run determines folder name in logs
+# it's also accessed by loggers
+name: "stage_2"
+
+model_name_or_path: 'roberta-base'

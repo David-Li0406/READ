@@ -1,0 +1,35 @@
+# @package _global_
+
+# to execute this experiment run:
+# python run.py experiment=stage_3_eval.yaml
+
+defaults:
+  - override /mode: eval.yaml
+
+# name of the run determines folder name in logs
+# it's also accessed by loggers
+name: "stage_3_eval"
+
+debug_mode: False
+
+# Datetime stamp of model to be evaluated
+# e.g.: finecl/logs/experiments/stage_3_doc_re/DATETIME
+model_path_datetime: 2022-10-16_16-23-54
+
+wcl_method: False # Run WCL method to denoise data
+input_theta: -1
+error_analysis: False
+num_train_epochs: 0
+training_data_type: None
+use_erica_data: False
+ignore_dev_set: False
+
+# BERT
+#model_type: 'bert'
+#model_name_or_path: 'bert-base-uncased'
+#prepro_data_dir: ${work_dir}/data/docred_bert_uncased
+
+# RoBERTa
+model_type: 'roberta'
+model_name_or_path: 'roberta-base'
+prepro_data_dir: ${work_dir}/data/docred_roberta

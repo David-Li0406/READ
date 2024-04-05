@@ -1,0 +1,50 @@
+# @package _global_
+
+#
+# Stage 3, Fine-tuning for document level RE:
+#
+
+# to execute this experiment run:
+# python run.py experiment=stage_3_doc_re.yaml
+
+defaults:
+  - override /mode: exp.yaml
+  # - override /trainer: doc_re.yaml
+
+# name of the run determines folder name in logs
+# it's also accessed by loggers
+name: "stage_3_doc_re"
+
+# Debug mode
+debug_mode: False
+
+#
+# Experiment settings:
+#
+num_train_epochs: 200
+use_erica_data: False
+epoch_based_learning_order: False
+
+# Load pretrained models
+load_pretrained_checkpoint: True
+pretrain_checkpoint: ${work_dir}/fine_cl/fine_grained_6000.bin
+
+# Ignore Dev set:
+ignore_dev_set: False # Only set to True when collecting learning order data
+
+# Use reduced proportions of annotated training data
+reduced_data: False
+train_prop: 0.01 # 0.10, 0.01
+
+# Training data type: distantly labeled data for pretraining, human annotated for fine-tuning
+training_data_type: 'annotated' # 'annotated' or 'distant'
+
+# BERT
+#model_type: 'bert'
+#model_name_or_path: 'bert-base-uncased'
+#prepro_data_dir: ${work_dir}/data/docred_bert_uncased
+
+# RoBERTa
+model_type: 'roberta'
+model_name_or_path: 'roberta-base'
+prepro_data_dir: ${work_dir}/data/docred_roberta

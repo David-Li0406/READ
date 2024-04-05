@@ -1,0 +1,23 @@
+# @package _global_
+
+# run in experiment mode with:
+# `python run.py mode=preprocess.yaml`
+
+preprocess_mode: True
+experiment_mode: False
+
+#model_type: 'bert'
+#model_name_or_path: 'bert-base-uncased'
+
+model_type: 'roberta'
+model_name_or_path: 'roberta-base'
+
+max_seq_length: 512
+do_lower_case: True
+ratio: 1.0
+
+# Data directories
+data_dir: ${work_dir}/data/
+erica_pretrain_data: True # True to preprocess ERICA data, False to preprocess DocRED data
+
+

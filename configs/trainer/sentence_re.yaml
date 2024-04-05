@@ -1,0 +1,52 @@
+#
+# wiki80 Experiments
+#
+dataset: "wiki80"
+train_prop: 1 # Train prop: 1%, 10%, 100% training data
+max_epoch: 8 # 8, 20
+
+#
+# retacred Experiments
+#
+# dataset: "retacred"
+# train_prop: 1 # Train prop: 1%, 10%, 100% training data
+# max_epoch: 8 # 8, 20
+
+#
+# semeval Experiments
+#
+# dataset: "semeval"
+# train_prop: 1 # 0.01, 0.10. 1
+# max_epoch: 8 # 20, 80
+
+
+#
+# General experiment settings
+#
+dropout: 0.35
+lr: 5e-5
+batch_size_per_gpu: 64
+max_length: 100
+data_dir: ${work_dir}/data/
+do_lower_case: True
+seed: 42
+mode: "CM"
+hidden_size: 768
+encoder: "bert"
+optim: "adamw"
+weight_decay: 1e-5
+adam_epsilon: 1e-8
+warmup_steps: 500
+max_grad_norm: 1
+rel_num: 0 # just a placeholder to be overwritten by count of rel classes in rel2id.json
+entity_marker: True # True: use entity markers, False: use [CLS] token for rel representations
+fp16: True
+clean_token_leaving_prob: 0.15
+
+# adversarial setting
+# To be rewrited by wandb
+adv_lr: 0.1
+adv_init_mag: 0.1
+adv_max_norm: 0.6
+adv_steps: 0
+dual_vocab: True

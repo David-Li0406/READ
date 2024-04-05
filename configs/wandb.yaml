@@ -1,0 +1,34 @@
+# wandb settings
+wandb:
+  setup:
+    project: Finecl_TA-VAT
+    entity: dal034
+
+program: run_wandb_v2.py
+
+metric:
+  name: test_score
+  goal: maxmize
+
+method: grid
+
+parameters:
+  --adv_lr:
+    values: 
+      [2e-2, 5e-2, 1e-1]
+  --adv_max_norm:
+    values:
+      [2e-1, 4e-1, 6e-1]
+  --adv_steps:
+    values:
+      [1,2,3]
+  # --clean_token_leaving_prob:
+  #   values:
+  #     [0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5]
+
+
+
+command:
+- ${interpreter}
+- ${program}
+- ${args_no_hyphens}

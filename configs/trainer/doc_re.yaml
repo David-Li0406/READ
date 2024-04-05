@@ -1,0 +1,9 @@
+clean_token_leaving_prob: 0.15
+
+# adversarial setting
+# To be rewrited by wandb
+adv_lr: 0.1
+adv_init_mag: 0.1
+adv_max_norm: 0.6
+adv_steps: 3
+dual_vocab: True

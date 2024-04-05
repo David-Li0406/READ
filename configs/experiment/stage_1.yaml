@@ -1,0 +1,53 @@
+# @package _global_
+
+#
+# Stage 1, Record learning order:
+#
+
+# to execute this experiment run:
+# python run.py experiment=stage_1.yaml
+
+defaults:
+  - override /mode: exp.yaml
+
+# name of the run determines folder name in logs
+# it's also accessed by loggers
+name: "stage_1"
+
+# Debug mode
+debug_mode: False
+
+#
+# Experiment settings:
+#
+num_train_epochs: 15
+
+# Used to load pretrained models
+load_pretrained_checkpoint: False
+pretrain_checkpoint: None
+
+# Ignore Dev set:
+ignore_dev_set: True
+
+# Batch- vs epoch-based learning order
+# True: epoch-based learning order
+# False: batch-based learning order (default)
+epoch_based_learning_order: False
+
+# Use pre-training data from ERICA paper
+use_erica_data: True # True or False. False defaults to docred data
+erica_file_num: 0 # 0 to 9 for the training file to use when collecting learning order
+prepro_erica_training_data_dir: ${work_dir}/data/erica_data
+
+# Use reduced proportions of annotated training data, not needed for learning order
+reduced_data: False
+train_prop: None
+
+# Training data type: distantly labeled data for pretraining, human annotated for fine-tuning
+training_data_type: 'distant' # 'annotated' or 'distant'
+
+# RoBERTa
+model_type: 'roberta'
+model_name_or_path: 'roberta-base'
+prepro_data_dir: ${prepro_erica_training_data_dir}
+#prepro_data_dir: ${work_dir}/data/docred_roberta

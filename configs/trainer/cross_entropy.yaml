@@ -1,0 +1,16 @@
+batch_size: 32
+evaluate_during_training_epoch: 5 # evaluateing every X epochs
+num_train_epochs_debug: 5 # used when debug mode is active
+max_seq_length: 512 # The maximum total input sequence length after WordPiece tokenization. Sequences longer than this will be truncated, and sequences shorter than this will be padded."
+gradient_accumulation_steps: 1  #Number of updates steps to accumulate before performing a backward/update pass
+learning_rate: 4e-5 # The initial learning rate for Adam
+weight_decay: 0.0 # Weight deay if we apply some.
+adam_epsilon: 1e-8 #Epsilon for Adam optimizer
+max_grad_norm: 1.0 #Max gradient norm.
+seed: 42 #random seed for initialization
+logging_steps: 500 #Log every X updates steps. Default: 50
+save_name: 'saved_model'
+train_prefix: 'train'
+test_prefix: 'test'
+ratio: 1.0
+ckpt: None

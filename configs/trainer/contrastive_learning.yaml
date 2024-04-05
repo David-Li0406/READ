@@ -1,0 +1,32 @@
+nproc_per_node: 3
+model: DOC # MTB, CP, DOC
+lr: 3e-5
+batch_size_per_gpu: 16
+max_epoch: 500
+n_gpu: 1
+gradient_accumulation_steps: 16
+save_step: 200
+temperature: 0.05 # temperature for NTXent loss
+train_sample: True # dynamic sample or not
+save_dir: ckpt_v2_autmented_5
+debug: False
+add_none: 1
+dataset_name: train_distant.json
+wiki_loss: 1
+doc_loss: 1
+fp16: True
+bert_model: roberta-base
+load_step: 0
+cuda: 4
+max_length: 512 # max sentence length
+hidden_size: 768 # hidden size for mlp
+weight_decay: 1e-5
+adam_epsilon: 1e-8
+warmup_steps: 500
+max_grad_norm: 1
+data_dir:  ${work_dir}/data/
+seed: 42
+local_rank: -1
+log_step: 5
+neg_sample_num: 64
+fine_grained: True

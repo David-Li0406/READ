@@ -1,0 +1,20 @@
+# @package _global_
+
+# to execute this experiment run:
+# python run.py experiment=stage_3_sentence_re.yaml
+
+defaults:
+  - override /mode: exp.yaml
+  - override /trainer: sentence_re.yaml
+
+# name of the run determines folder name in logs
+# it's also accessed by loggers
+name: "stage_3_sentence_re"
+
+# Debug mode
+debug_mode: False
+
+# pretrained_model_path: "/home/dawei/projects/dawei/finecl/fine_cl/ERICA_roberta_EP+RP_new"
+pretrained_model_path: "/home/dawei/projects/dawei/finecl/fine_cl/fine_grained_6000.bin"
+# pretrained_model_path: "None" # Checkpoint, "None" will load BERT
+model_name_or_path: 'roberta-base' # Base model: 'bert-base-uncased' 'roberta-base'
