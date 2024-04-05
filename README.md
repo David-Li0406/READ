@@ -60,7 +60,7 @@ wandb agent <sweep-ID>
 ```
 
 - Or you can directly use the hyper-parameters below:
-- 
+
 For ERICA:
 
 |              |     | SemEval |      |     | ReTACRED |      |     | Wiki80 |      |
